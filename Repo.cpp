@@ -3,6 +3,7 @@
 
 Repo::Repo(string fisier1)
 {
+	// constructor
 	fisier = fisier1;
 
 	ifstream f(fisier);
@@ -20,11 +21,13 @@ Repo::Repo(string fisier1)
 
 vector<device> Repo::getList()
 {
+	// returnam lista de device-uri
 	return this->lista_device;
 }
 
 string Repo::cauta(string text)
 {
+	// cautam un text dat
 	for (int i = 0; i < lista_device.size(); i++)
 	{
 		string aux = lista_device[i].model + " " + lista_device[i].culoare + " " + to_string(lista_device[i].pret);
@@ -38,6 +41,7 @@ string Repo::cauta(string text)
 
 vector<device> Repo::filtrare_model(string model)
 {
+	// filtram dupa un model dat
 	vector<device> v;
 	for (int i = 0; i < lista_device.size(); i++)
 	{
@@ -49,6 +53,7 @@ vector<device> Repo::filtrare_model(string model)
 
 vector<device> Repo::filtrare_an(int an)
 {
+	// filtram dupa un an dat
 	vector<device> v;
 	for (int i = 0; i < lista_device.size(); i++)
 	{

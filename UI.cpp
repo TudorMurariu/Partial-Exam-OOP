@@ -3,6 +3,7 @@
 
 void gui::buid_ui()
 {
+	// construim ui-ul
 	QHBoxLayout* mainly = new QHBoxLayout;
 
 	QWidget* left = new QWidget;
@@ -35,6 +36,7 @@ void gui::buid_ui()
 
 void gui::conect_signals()
 {
+	// conectam ui-ul prin semnale la service
 	refresh(srv.getList());
 
 	QObject::connect(lista, &QListWidget::itemClicked, [&]() {
@@ -65,6 +67,7 @@ void gui::conect_signals()
 
 void gui::refresh(vector<device> l)
 {
+	/// rescriem lista
 	lista->clear();
 	lista->addItem("model   culoare   pret");
 	for (int i = 0; i < l.size(); i++)
